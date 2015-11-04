@@ -2,7 +2,7 @@ import numpy as np
 from PIL import Image, ImageFont, ImageDraw
 from nltk.book import text7
 import h5py
-from downsampling import downsample_letter
+from aux_functions import downsample_letter
 
 word = text7[0]
 Nwords = 100
