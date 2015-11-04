@@ -2,13 +2,14 @@ from PIL import ImageDraw
 from PIL import Image, ImageFont
 from string import ascii_lowercase
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 store_directory = './alphabet/'
 
 # Defin the font
 font_source = './Cocomat Ultralight-trial.ttf'
 font_source = './secrcode.ttf'
+font_source = './Chunk.ttf'
 
 font = ImageFont.truetype(font=font_source, size=80)
 
@@ -33,7 +34,3 @@ for i in range(0, 10):
 # I just need now to transform this into numpy arrays in
 #  order to operate with them
 pix = np.array(img.getdata()).reshape(img.size[0], img.size[1])
-
-# Note that you can also plot the img object directly
-#plt.matshow(pix)
-#plt.show()
