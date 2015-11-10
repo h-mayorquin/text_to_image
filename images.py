@@ -11,12 +11,13 @@ font_source = './Cocomat Ultralight-trial.ttf'
 font_source = './secrcode.ttf'
 font_source = './Chunk.ttf'
 
-font = ImageFont.truetype(font=font_source, size=80)
-
 # The 100 is the pixels, the 256 is the color, 1 is for only one pixel
-pixels = 100
-coord_x = 18
-coord_y = 18
+pixels = 20
+coord_x = 2
+coord_y = 0
+size = 20
+
+font = ImageFont.truetype(font=font_source, size=size)
 
 for letter in ascii_lowercase:
     img = Image.new('1', (pixels, pixels), 256)
