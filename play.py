@@ -53,6 +53,7 @@ for letter in letters:
 
 # Transform the list into an array
 signal = np.array(image_list)
+letters = [letter for letter in letters]
 letters_array = np.asarray(letters)
 print('Data size is', signal.shape)
 print('Number of words is', Nwords)
