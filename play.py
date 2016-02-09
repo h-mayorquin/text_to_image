@@ -11,10 +11,19 @@ import h5py
 # Now we import the particular corpus that we are intested in
 from nltk.book import text7 as text
 
+# General parameters
+lowercase = True  # Makes all the letter lowercase
+
 Nwords = len(text)
 # Nwords = 500
 text = text7[0:Nwords]
 letters = ' '.join(text)
+# Get letters to a list
+if lowercase:
+    letters = [letter.lower() for letter in letters]
+else:
+    letters = [letter for letter in letters]
+
 Nletters = len(letters)
 
 store_directory = './wall_street/'
@@ -53,7 +62,6 @@ for letter in letters:
 
 # Transform the list into an array
 signal = np.array(image_list)
-letters = [letter for letter in letters]
 letters_array = np.asarray(letters)
 print('Data size is', signal.shape)
 print('Number of words is', Nwords)
