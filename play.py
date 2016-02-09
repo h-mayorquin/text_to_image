@@ -9,7 +9,7 @@ from nltk.book import text7
 import h5py
 
 # Now we import the particular corpus that we are intested in
-from nltk.book import text7 as text
+from nltk.book import text1 as text
 
 # General parameters
 lowercase = True  # Makes all the letter lowercase
@@ -26,7 +26,7 @@ else:
 
 Nletters = len(letters)
 
-store_directory = './wall_street/'
+store_directory = './moby_dick/'
 
 # Define the font
 font_directory = './fonts/'
@@ -68,9 +68,9 @@ print('Number of words is', Nwords)
 print('Number of letters', Nletters)
 
 # Save this to a hdf5 data base using a context manager
-save_filename = './wall_street_data.hdf5'
+save_filename = './moby_dick_data.hdf5'
 with h5py.File(save_filename, 'w') as f:
     f['/signal'] = signal
 
 # Save the letters
-np.save('./wall_street_letters.npy', letters_array)
+np.save('./moby_dick_letters.npy', letters_array)

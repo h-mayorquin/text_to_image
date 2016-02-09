@@ -4,7 +4,6 @@ nltk package to images.
 """
 import numpy as np
 from PIL import Image, ImageFont, ImageDraw
-from nltk.book import text7
 import h5py
 
 # Now we import the particular corpus that we are intested in
@@ -15,7 +14,7 @@ lowercase = True  # Makes all the letter lowercase
 
 Nwords = len(text)
 # Nwords = 500
-text = text7[0:Nwords]
+text = text[0:Nwords]
 letters = ' '.join(text)
 # Get letters to a list
 if lowercase:
