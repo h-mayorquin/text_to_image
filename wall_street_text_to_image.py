@@ -13,9 +13,10 @@ from nltk.book import text7 as text
 lowercase = True  # Makes all the letter lowercase
 
 Nwords = len(text)
-# Nwords = 500
+# Nwords = 20
 text = text[0:Nwords]
 letters = ' '.join(text)
+
 # Get letters to a list
 if lowercase:
     letters = [letter.lower() for letter in letters]
@@ -39,22 +40,21 @@ size = 15
 font = ImageFont.truetype(font=font_source, size=size)
 
 # Parameters for the run
-save_image = False  # Stores images in a the  store_directory
-to_list = True
+save_image = True  # Stores images in the store_directory
 counter = 0
 image_list = []
 
 for letter in letters:
-    # 256 is the color and 1 is only for one pixel
-    img = Image.new('1', (pixels, pixels), 256)
-    d = ImageDraw.Draw(img)
-    d.text((coord_x, coord_y), letter, font=font)
+    if letter != ' ':
+        # 256 is the color and 1 is only for one pixel
+        img = Image.new('1', (pixels, pixels), 256)
+        d = ImageDraw.Draw(img)
+        d.text((coord_x, coord_y), letter, font=font)
 
-    if save_image:
-        img.save(store_directory + str(counter) + '.png')
-        counter += 1
+        if save_image:
+            img.save(store_directory + str(counter) + '.png')
+            counter += 1
 
-    if to_list:
         pix = np.array(img.getdata()).reshape(img.size[0], img.size[1])
         image_list.append(pix)
 
